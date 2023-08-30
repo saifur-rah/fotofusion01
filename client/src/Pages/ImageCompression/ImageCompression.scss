@@ -1,0 +1,489 @@
+// .main-body {
+//     display: flex;
+//     padding: 10px;
+//     min-height: 100vh;
+//     align-items: center;
+//     justify-content: center;
+//     background: #e3f2fd;
+  
+//     .container {
+//       background-color: rgb(239, 14, 14);
+//       width: 850px;
+//       padding: 30px 35px 35px;
+//       // background: #fff;
+//       border-radius: 10px;
+//       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  
+//       &.disable {
+//         .editor-panel,
+//         .controls .reset-filter,
+//         .controls .save-img {
+//           opacity: 0.5;
+//           pointer-events: none;
+//         }
+//       }
+  
+//       h2 {
+//         margin-top: -8px;
+//         font-size: 22px;
+//         font-weight: 500;
+//       }
+  
+//       .wrapper {
+//         display: flex;
+//         margin: 20px 0;
+//         min-height: 335px;
+  
+//         .editor-panel {
+//           padding: 15px 20px;
+//           width: 280px;
+//           border-radius: 5px;
+//           border: 1px solid #ccc;
+  
+//           .title {
+//             display: block;
+//             font-size: 16px;
+//             margin-bottom: 12px;
+//           }
+  
+//           .options,
+//           .controls {
+//             display: flex;
+//             flex-wrap: wrap;
+//             justify-content: space-between;
+//           }
+  
+//           button {
+//             outline: none;
+//             height: 40px;
+//             font-size: 14px;
+//             color: #6c757d;
+//             background: #fff;
+//             border-radius: 3px;
+//             margin-bottom: 8px;
+//             border: 1px solid #aaa;
+  
+//             &:hover {
+//               background: #f5f5f5;
+//             }
+//           }
+  
+//           .filter button {
+//             width: calc(100% / 2 - 4px);
+//           }
+  
+//           .filter button.active {
+//             color: #fff;
+//             border-color: #5372f0;
+//             background: #5372f0;
+//           }
+  
+//           .filter .slider {
+//             margin-top: 12px;
+  
+//             .filter-info {
+//               display: flex;
+//               color: #464646;
+//               font-size: 14px;
+//               justify-content: space-between;
+//             }
+  
+//             input {
+//               width: 100%;
+//               height: 5px;
+//               accent-color: #5372f0;
+//             }
+//           }
+  
+//           .rotate {
+//             margin-top: 17px;
+  
+//             button {
+//               display: flex;
+//               align-items: center;
+//               justify-content: center;
+//               width: calc(100% / 4 - 3px);
+  
+//               &:nth-child(3),
+//               &:nth-child(4) {
+//                 font-size: 18px;
+//               }
+  
+//               &:active {
+//                 color: #fff;
+//                 background: #5372f0;
+//                 border-color: #5372f0;
+//               }
+//             }
+//           }
+//         }
+  
+//         .preview-img {
+//           flex-grow: 1;
+//           display: flex;
+//           overflow: hidden;
+//           margin-left: 20px;
+//           border-radius: 5px;
+//           align-items: center;
+//           justify-content: center;
+//           max-width: 100%;
+  
+//           img {
+//             max-width: 490px;
+//             max-height: 335px;
+//             width: 100%;
+//             height: 100%;
+//             object-fit: contain;
+//           }
+//         }
+//       }
+  
+//       .controls {
+//         button {
+//           padding: 11px 20px;
+//           font-size: 14px;
+//           border-radius: 3px;
+//           outline: none;
+//           color: #fff;
+//           cursor: pointer;
+//           background: none;
+//           transition: all 0.3s ease;
+//           text-transform: uppercase;
+  
+//           &.reset-filter {
+//             color: #6c757d;
+//             border: 1px solid #6c757d;
+  
+//             &:hover {
+//               color: #fff;
+//               background: #6c757d;
+//             }
+//           }
+  
+//           &.label-img {
+//             background: #6c757d;
+//             border: 1px solid #b5c0ca;
+//             padding: 12px 20px;
+//           }
+  
+//           &.save-img {
+//             margin-left: 5px;
+//             background: #5372f0;
+//             border: 1px solid #5372f0;
+//           }
+//         }
+  
+//         .row {
+//           .options {
+//             .undo {
+//               margin: 5px;
+//               color: black;
+//               background-color: #5372f0;
+//             }
+//           }
+//         }
+//       }
+//     }
+  
+//     .overlay-wrapper {
+//       display: contents;
+  
+//       .overlay-image {
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         opacity: 0.4;
+//         z-index: 1;
+//       }
+//     }
+  
+//     .content {
+//       .row {
+//         display: flex;
+//         justify-content: space-between;
+  
+//         .column {
+//           width: calc(100% / 2 - 10px);
+  
+//           label {
+//             display: block;
+//             font-size: 16px;
+//           }
+  
+//           input {
+//             width: 100%;
+//             height: 40px;
+//             outline: none;
+//             margin-top: 7px;
+//             padding: 0 15px;
+//             font-size: 1rem;
+//             border-radius: 4px;
+//             border: 1px solid #aaa;
+  
+//             &:focus {
+//               padding: 0 14px;
+//               border: 2px solid #927dfc;
+//             }
+//           }
+//         }
+//       }
+//     }
+  
+//     @media screen and (max-width: 760px) {
+//       .container {
+//         padding: 25px;
+//       }
+  
+//       .container .wrapper {
+//         flex-wrap: wrap-reverse;
+//       }
+  
+//       .wrapper .editor-panel {
+//         width: 100%;
+//       }
+  
+//       .wrapper .preview-img {
+//         width: 100%;
+//         margin: 0 0 15px;
+//       }
+//     }
+  
+//     @media screen and (max-width: 500px) {
+//       .controls button {
+//         width: 100%;
+//         margin-bottom: 10px;
+//       }
+  
+//       .controls .row {
+//         width: 100%;
+//       }
+  
+//       .controls .row .save-img {
+//         margin-left: 0px;
+//       }
+//     }
+//   }
+  
+.main-bodyc{
+  display: flex;
+  padding: 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  // background: orange;
+  background: #fff;
+}
+.containerc{
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: #E5E5CB;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.containerc.disablec .editor-panelc,
+.containerc.disablec .controlsc .reset-filterc,
+.containerc.disablec .controlsc .save-imgc{
+  opacity: 0.5;
+  pointer-events: none;
+}
+.containerc h2{
+  margin-top: -8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.containerc .wrapperc{
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+.wrapperc .editor-panelc{
+  padding: 15px 20px;
+  width: 280px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.editor-panelc .titlec{
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.editor-panelc .optionsc, .controlsc{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.editor-panelc button{
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  color: #6C757D;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+}
+.editor-panelc .filterc button{
+  width: calc(100% / 2 - 4px);
+}
+.editor-panelc button:hover{
+  background: #f5f5f5;
+}
+.filterc button.active{
+  color: #fff;
+  border-color: #3C2A21;
+  background: #3C2A21;
+}
+.filterc .sliderc{
+  margin-top: 12px;
+}
+.filterc .sliderc .filter-infoc{
+  display: flex;
+  color: #464646;
+  font-size: 14px;
+  justify-content: space-between;
+}
+.filterc .sliderc input{
+  width: 100%;
+  height: 5px;
+  accent-color: #3C2A21;
+}
+.editor-panelc .rotatec{
+  margin-top: 17px;
+}
+.editor-panelc .rotatec button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 3px);
+}
+.rotatec .optionsc button:nth-child(3),
+.rotatec .optionsc button:nth-child(4){
+  font-size: 18px;
+}
+.rotatec .optionsc button:active{
+  color: #fff;
+  background: #3C2A21;
+  border-color: #3C2A21;
+}
+.wrapperc .preview-imgc{
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+  margin-left: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.preview-imgc img{
+  max-width: 490px;
+  max-height: 335px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.overlay-wrapperc{
+  display: contents;
+}
+.overlay-imagec {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 1;
+}
+.overlay-labelc{
+  background: #6C757D;
+  border: 1px solid #b5c0ca;
+  padding:12px 20px;
+  
+
+}
+
+.controlsc {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+.rowc .optionsc {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  justify-content: center;
+}
+.rowc .optionsc button {
+  background-color: #3C2A21;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.label-imgc {
+  background-color: #3C2A21;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    margin-top: -10px;
+
+  }
+
+}
+.contentc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  & .column-contentc {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 760px) {
+  .containerc{
+    padding: 25px;
+  }
+  .containerc .wrapperc{
+    flex-wrap: wrap-reverse;
+  }
+  .wrapperc .editor-panelc{
+    width: 100%;
+  }
+  .wrapperc .preview-imgc{
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .controlsc button{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .controlsc .rowc{
+    width: 100%;
+  }
+  .controlsc .rowc .save-imgc{
+    margin-left: 0px;
+  }
+}

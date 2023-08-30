@@ -1,0 +1,49 @@
+.header {
+    position: relative;
+    .headerTitles {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .headerTitleSm {
+            font-size: 24px;
+            color: rgb(5, 4, 1, .7);
+            @media screen and (max-width: 768px) { 
+                font-size: 12px;
+            }
+        }
+        .headerTitleLg {
+            font-size: 48px;
+            font-weight: 600;
+            color: #050401;
+            background-color: rgb(255, 255, 255, .7);
+            padding: 10px 20px;
+            border-radius: 6px;
+            @media screen and (max-width: 768px) { 
+                font-size: 24px;
+            }
+        }
+    }
+    .headerImg {
+        overflow: hidden;
+        border-bottom-left-radius: 50% 22%;
+        border-bottom-right-radius: 50% 22%;
+        @media screen and (max-width: 480px) {
+            border-bottom-left-radius: 100% 22%;
+            border-bottom-right-radius: 100% 22%;
+            
+        }
+        img {
+            width: 100%;
+            height: 450px;
+            @media screen and (max-width: 768px) {
+                height: 300px;
+            }
+            object-fit: cover;
+        }
+    }
+}

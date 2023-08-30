@@ -1,0 +1,78 @@
+.cards {
+    max-width: 1040px;
+    margin: 80px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .cardsHeading {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        color: #1A120B;
+
+    }
+    .cardsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            width: 48%;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+            background-color: #E5E5CB;
+            display: flex;
+            padding: 20px;
+            border-radius: 16px;
+            gap: 20px;
+            transition: all 0.5 ease;
+            &:hover {
+            box-shadow: rgb(60, 42, 33, .1) 0px 10px 15px -3px, rgb(60, 42, 33, .05) 0px 4px 6px -2px;
+
+            }
+            img {
+                flex: 1;
+                max-width: 100px;
+                object-fit: contain;
+            }
+            .cardContent {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                align-items: flex-start;
+                .cardHeading {
+                    color: #1A120B;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                .cardBody {
+                    font-size: 14px;
+                    color: #3C2A21;
+                }
+                .cardButton {
+                    font-size: 14px;
+                    color: #3C2A21;
+                    font-weight: 600;
+                    cursor: pointer;
+                    background-color: white;
+                    padding: 4px 10px;
+                    border-radius: 100px;
+                    .link {
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
